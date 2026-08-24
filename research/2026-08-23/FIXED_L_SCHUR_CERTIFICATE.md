@@ -1,11 +1,9 @@
-# Fixed-L Schur-Complement Certificate for the Full Weil Form
+# Fixed-L Schur-Complement Certificate for the Full Weil Form
 
 **Claim ID:** `W-SCHUR-01`  
 **Status:** `PROVED_SYMBOLIC` as an abstract operator theorem.  
 **RH status:** fixed-support sufficient certificate architecture only; no global RH claim.  
 **Novelty:** standard Schur-complement/operator theory specialized to the current Weil decomposition; no novelty claim.
-
-> Note: the title means “fixed support scale L.”
 
 ## 1. Exact fixed-L decomposition
 
