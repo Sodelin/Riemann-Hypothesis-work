@@ -157,7 +157,7 @@ def print_sweep(
             out = spectrum(L, N, nx=nx, nr=nr, R=R)
             first = " ".join(f"{v:+.9e}" for v in out.eigvals[:4])
             print(
-                f"{L:10.6f} {N:3d} {out.eigvals[0]:+ .9e} "
+                f"{L:10.6f} {N:3d} {out.eigvals[0]:+.9e} "
                 f"{out.numerical_negative_count:3d}   {first}"
             )
 
