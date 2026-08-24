@@ -1,0 +1,59 @@
+# odd localized Weil finite-basis sweep -- NUMERICAL ONLY
+# Generated with the algorithm in odd_weil_finite_basis.py using N=6, nx=140,
+# nr=1200, R=80 for the main sweep. Values are ordinary floating-point
+# Gauss-Legendre quadrature, NOT interval enclosures.
+#
+# The tiny negative values at a=0.8 and a=1.0 MUST NOT be interpreted as
+# counterexamples. Their scale is comparable to truncation/quadrature sensitivity;
+# the purpose of this file is structural reconnaissance.
+#
+# a       prime-powers        first four generalized eigenvalues
+ 0.25    -                   +4.3071262e-01 +1.21891202e+00 +1.53969474e+00 +1.80455756e+00
+ 0.30    -                   +2.6421464e-01 +1.10157385e+00 +1.53790773e+00 +1.81905638e+00
+ 0.35    2                   +1.1097105e-01 +9.5822450e-01 +1.40519503e+00 +1.70745161e+00
+ 0.40    2                   +2.624394e-02  +8.9895946e-01 +1.36034405e+00 +1.67589484e+00
+ 0.50    2                   +7.00000995e-04 +5.41185361e-01 +8.97724508e-01 +1.29696474e+00
+ 0.60    2,3                 +2.46054890e-06 +2.78778652e-02 +8.16628242e-01 +1.12523561e+00
+ 0.70    2,3,4               +1.31649766e-08 +3.10154156e-04 +2.25924934e-01 +1.15079673e+00
+ 0.80    2,3,4               -5.70891798e-09 +1.46329306e-05 +4.37892665e-03 +7.34070469e-01
+ 1.00    2,3,4,5,7           -2.37192381e-08 +2.22263651e-08 +2.04229291e-04 +1.57164927e-01
+
+# Fourier-cutoff stability -- NUMERICAL ONLY
+# Each row uses nx=140 and N=6; nr is increased with R.
+# a=0.60
+R=  60.0 nr= 900  +2.17526710e-06 +2.69576995e-02 +8.16059604e-01
+R=  80.0 nr=1200  +2.46054890e-06 +2.78778652e-02 +8.16628242e-01
+R= 100.0 nr=1500  +2.51420566e-06 +2.80128735e-02 +8.16698529e-01
+R= 120.0 nr=1800  +2.52869088e-06 +2.80466390e-02 +8.16714284e-01
+
+# a=0.70
+R=  60.0 nr= 900  +1.04937434e-08 +3.02766486e-04 +2.23128907e-01
+R=  80.0 nr=1200  +1.31649766e-08 +3.10154156e-04 +2.25924934e-01
+R= 100.0 nr=1500  +1.37295926e-08 +3.11462936e-04 +2.26415559e-01
+R= 120.0 nr=1800  +1.38654621e-08 +3.11752371e-04 +2.26510699e-01
+
+# a=0.80
+R=  60.0 nr= 900  -6.28055935e-09 +1.45195740e-05 +4.31370959e-03
+R=  80.0 nr=1200  -5.70891798e-09 +1.46329306e-05 +4.37892665e-03
+R= 100.0 nr=1500  -5.60996848e-09 +1.46433528e-05 +4.38899223e-03
+R= 120.0 nr=1800  -5.59206942e-09 +1.46448624e-05 +4.39119357e-03
+
+# a=1.00
+R=  60.0 nr= 900  -2.40139031e-08 +2.08622762e-08 +2.03070359e-04
+R=  80.0 nr=1200  -2.37192381e-08 +2.22263651e-08 +2.04229291e-04
+R= 100.0 nr=1500  -2.37054000e-08 +2.24256926e-08 +2.04387825e-04
+R= 120.0 nr=1800  -2.37194383e-08 +2.24663527e-08 +2.04422754e-04
+
+# Diagnostic interpretation
+# -------------------------
+# 1. The smallest sampled odd-sector eigenvalue collapses very rapidly toward
+#    numerical zero as support grows.
+# 2. A proof architecture requiring a scale-uniform positive spectral gap is
+#    therefore poorly matched to this geometry.
+# 3. The values near 1e-8 are far too small to classify by ordinary quadrature.
+#    Any sign claim here requires rigorous tail bounds + interval arithmetic.
+# 4. The second/third eigenvalues also fall sharply after new prime-power shifts
+#    become active, suggesting that threshold updates should preserve signed
+#    arithmetic cancellation rather than bound every prime contribution in
+#    absolute value.
+# 5. These observations are design constraints only, not evidence for or against RH.
