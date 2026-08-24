@@ -1,24 +1,34 @@
 # Riemann Hypothesis Work
 
-This repository is a documentation archive for an exploratory, AI-assisted research program concerning the Riemann Hypothesis.
+This repository is a documentation and active-research archive for an exploratory, AI-assisted program concerning the Riemann Hypothesis.
 
 ## Status
 
-**No proof of the Riemann Hypothesis is claimed.** The materials here record proof attempts, adversarial audits, exact route eliminations, equivalent reformulations, candidate lemmas, computational certificates, and questions for independent expert review.
+**No proof or disproof of the Riemann Hypothesis is claimed.** The materials record proof attempts, adversarial audits, exact route eliminations, equivalent reformulations, candidate lemmas, formalization targets, computational certificates, and questions for independent expert review.
 
-The strongest current materials date from the 2026-08-01 research cycle. They distinguish rigorously established identities and counterexamples from candidate results whose correctness and novelty still require qualified human verification.
+The 2026-08-01 cycle is preserved as the historical audited dossier. An active 2026-08-23 cycle now uses Git history as a claim/method ledger and attacks an explicit Lean-oriented gap graph rather than treating every reformulation as fresh progress.
 
-## Repository structure
+## Active research cycle
+
+- [`research/2026-08-23/README.md`](research/2026-08-23/README.md) — cycle overview and work queue.
+- [`research/2026-08-23/ADVERSARIAL_PROTOCOL.md`](research/2026-08-23/ADVERSARIAL_PROTOCOL.md) — status rules, falsification gates, route-kill/reopen rules, and proof-promotion standard.
+- [`research/2026-08-23/LEAN_GAP_GRAPH.md`](research/2026-08-23/LEAN_GAP_GRAPH.md) — named nodes between current Lean infrastructure and a complete RH implication.
+- [`research/2026-08-23/ROUTE_A_PRIME_SHIFT_GRAPH.md`](research/2026-08-23/ROUTE_A_PRIME_SHIFT_GRAPH.md) — first experimental Weil/prime-shift block-positivity route.
+- [`research/2026-08-23/CLAIM_LEDGER.csv`](research/2026-08-23/CLAIM_LEDGER.csv) — machine-readable claim/status ledger.
+
+## Historical repository structure
 
 - `docs/parallel-audit-ledger.md` — audit of earlier GGC/Thorin and two-copy Laguerre routes.
 - `docs/expert-review-packet.md` — narrow review packet for the candidate finite-Laguerre admissible-kernel theorem.
-- `docs/dossier/` — the full multi-agent research dossier, split into parts for readable version control.
+- `docs/dossier/` — the full 2026-08-01 multi-agent research dossier, split into parts for readable version control.
 - `code/theta_slice_interval_certificate.py` — directed-rounding interval certificate used in one route-exclusion check.
 
 ## Verification standard
 
-An identity or RH-equivalent reformulation is not counted as a proof. Numerical evidence is not counted as a proof. Agreement among related AI model instances is not independent peer review. A result should be treated as established only after its implication chain, domains, interchanges, estimates, and prior-art status survive independent human reconstruction and review.
+An identity or RH-equivalent reformulation is not counted as a proof. Numerical evidence is not counted as a proof. Agreement among related AI model instances is not independent peer review. A result should be treated as established only after its implication chain, domains, interchanges, estimates, and prior-art status survive independent reconstruction and review.
+
+The active cycle additionally distinguishes `LEAN_TARGET`, `UPSTREAM_LEAN`, and `LEAN_VERIFIED`. A theorem does not become locally `LEAN_VERIFIED` merely because it is written in Lean-shaped syntax or is known to exist in an upstream repository.
 
 ## Attribution
 
-These materials were produced through a multi-instance generative-AI research process initiated and curated by a human user. The mathematical derivations have not all been independently reconstructed by qualified human experts. Any future manuscript or public mathematical claim should disclose significant AI assistance and identify only humans meeting the relevant authorship standard as authors.
+These materials were produced through a generative-AI-assisted research process initiated and curated by a human user. The mathematical derivations have not all been independently reconstructed by qualified human experts. Any future manuscript or public mathematical claim should disclose significant AI assistance and identify only humans meeting the relevant authorship standard as authors.
