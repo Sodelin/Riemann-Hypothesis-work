@@ -1,0 +1,32 @@
+name: Lean research CI
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "lean/**"
+      - ".github/workflows/lean-ci.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "lean/**"
+      - ".github/workflows/lean-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Lean research package
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: lean
+          build: true
+          test: false
+          use-github-cache: true
