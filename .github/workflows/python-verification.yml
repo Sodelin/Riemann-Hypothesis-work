@@ -1,0 +1,30 @@
+name: Python interval-certificate verification
+
+on:
+  push:
+    paths:
+      - "code/theta_slice_interval_certificate.py"
+      - "tests/**"
+      - ".github/workflows/python-verification.yml"
+  pull_request:
+    paths:
+      - "code/theta_slice_interval_certificate.py"
+      - "tests/**"
+      - ".github/workflows/python-verification.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check assertion-mode regressions
+        run: python -B -m unittest discover -s tests -v
+      - name: Replay the theta-slice interval certificate
+        run: python -B code/theta_slice_interval_certificate.py

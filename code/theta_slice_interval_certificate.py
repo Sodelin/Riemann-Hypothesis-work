@@ -8,6 +8,13 @@ Taylor sums with an explicit geometric remainder, and every Decimal operation
 is rounded outward.
 """
 
+
+if not __debug__:
+    raise RuntimeError(
+        "Verification requires assertions; rerun without -O, -OO, "
+        "or PYTHONOPTIMIZE."
+    )
+
 from decimal import Decimal as D
 from decimal import ROUND_CEILING, ROUND_FLOOR, localcontext
 from math import comb
